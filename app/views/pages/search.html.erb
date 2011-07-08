@@ -1,0 +1,38 @@
+<section id="search">
+	<ul class="search_tabs">
+		<li><a href="#school_tab">School</a></li>
+		<li><a href="#book_tab">Book</a></li>
+		<li><a href="#isbn_tab">ISBN</a></li>
+	</ul>
+	<div class="search_tab_container">
+		<form id="school_tab" class="search_tab_content_shadow" action="" method="post">
+			School:<br />
+			<select name="school">
+				<option value="0"></option>
+				<option value="1">Texas Tech University</option>
+				<option value="2">University of Texas</option>
+				<option value="3">Texas A&M University</option>
+				<option value="4">University of Houston</option>
+				<option value="5">Texas State University</option>
+			</select>
+			<br />
+			Course (3 or 4 letter version):<br />
+			<input type="text" name="course" value="" /><br />
+			<p>Additional search options</p>
+			<hr />
+			Book Title:<br />
+			<input type="text" name="book" value="" /><br />
+			<input type="submit" value="Search" />
+		</form>
+		<form id="book_tab" class="search_tab_content_shadow" action="" method="post">
+			Book Title:<br />
+			<input type="text" name="title" value="" /><br />
+			<input type="submit" value="Search" />
+		</form>
+		<form id="isbn_tab" class="search_tab_content_shadow" action="" method="post">
+			ISBN:<br />
+			<input type="text" name="isbn" value="" /><br />
+			<input type="submit" value="Search" />
+		</form>
+	</div>
+</section>
