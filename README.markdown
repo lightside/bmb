@@ -6,9 +6,9 @@
 #
 ###
 
-Author: Ryan Johanningmeier
-Date Created: 07 July 2011
-Author Email: ryan@onlylightside.com
+Author: Ryan Johanningmeier  
+Date Created: 07 July 2011  
+Author Email: ryan@onlylightside.com  
 Author Website: http://www.onlylightside.com
 
 ###
@@ -17,7 +17,7 @@ Author Website: http://www.onlylightside.com
 #
 ###
 
-Client: Black Market Books
+Client: Black Market Books  
 Client Website: http://www.bmarketbooks.com
 
 ###
@@ -34,5 +34,5 @@ This application is the backbone to the Black Market Books website.
 #
 ###
 
-Version 1.0:
+Version 1.0:  
 This section will be updated as the site is built.
