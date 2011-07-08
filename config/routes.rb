@@ -1,8 +1,9 @@
 Bmb::Application.routes.draw do
-  get "pages/home"
-  get "pages/contact"
-  get "pages/search"
-  get "pages/help"
+  match '/contact', :to => "pages/contact"
+  match '/search', :to => "pages/search"
+  match '/help', :to => "pages/help"
+  
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
