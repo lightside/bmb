@@ -54,4 +54,28 @@ describe PagesController do
   		response.should have_selector("title", :content => @base_title)
   	end
   end
+  
+  describe "GET 'terms'" do
+  	it "should be successful" do
+  		get 'terms'
+  		response.should be_success
+  	end
+  	
+  	it "should have the right title" do
+  		get 'terms'
+  		response.should have_selector("title", :content => @base_title)
+  	end
+  end
+  
+  describe "GET 'privacy'" do
+  	it "should be successful" do
+  		get 'privacy'
+  		response.should be_successful
+  	end
+  	
+  	it "should have the right title" do
+  		get 'privacy'
+  		response.should have_selector("title", :content => @base_title)
+  	end
+  end
 end

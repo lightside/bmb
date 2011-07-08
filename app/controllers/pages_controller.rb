@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  
   def home
   end
 
@@ -11,6 +12,14 @@ class PagesController < ApplicationController
   end
   
   def help
-  	@title = "Help"
+  	@title = "FAQ"
+  end
+  
+  def terms
+  	@title = "Terms of Use"
+  end
+  
+  def privacy
+  	@title = "Privacy Policy"
   end
 end

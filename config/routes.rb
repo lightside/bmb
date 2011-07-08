@@ -1,7 +1,11 @@
 Bmb::Application.routes.draw do
-  match '/contact', :to => "pages/contact"
-  match '/search', :to => "pages/search"
-  match '/help', :to => "pages/help"
+  get "users/new"
+
+  match '/contact', :to => 'pages#contact'
+  match '/search', :to => 'pages#search'
+  match '/help', :to => 'pages#help'
+  match '/terms', :to => 'pages#terms'
+  match '/privacy', :to => 'pages#privacy'
   
   root :to => 'pages#home'
 

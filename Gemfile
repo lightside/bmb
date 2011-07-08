@@ -6,9 +6,6 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.2.11'
-gem 'ZenTest'
-gem 'redgreen'
-gem 'test-unit'
 
 group :development do
 	gem 'rspec-rails', '2.6.1'
