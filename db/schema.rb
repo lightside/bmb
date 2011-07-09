@@ -10,45 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110709203949) do
 
-  create_table "books", :primary_key => "bookId", :force => true do |t|
-    t.integer "courseId"
-    t.integer "schoolId",                       :null => false
-    t.string  "bookTitle",       :limit => 125
-    t.string  "bookAuthor",      :limit => 125
-    t.string  "bookISBN",        :limit => 14
-    t.string  "bookCondition",   :limit => 10
-    t.string  "bookTransaction", :limit => 5
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "courses", :primary_key => "courseId", :force => true do |t|
-    t.integer "schoolId"
-    t.string  "courseName",         :limit => 125
-    t.string  "courseAbbreviation", :limit => 4
-  end
-
-  create_table "listings", :primary_key => "listingId", :force => true do |t|
-    t.integer "userId"
-    t.integer "bookId"
-    t.integer "courseId"
-    t.integer "schoolId"
-    t.string  "listingTitle",       :limit => 125
-    t.text    "listingDescription"
-    t.date    "dateCreated",                       :null => false
-  end
-
-  create_table "schools", :primary_key => "schoolId", :force => true do |t|
-    t.string "schoolName",   :limit => 125
-    t.string "schoolDomain", :limit => 20
-  end
-
-  create_table "users", :primary_key => "userId", :force => true do |t|
-    t.string  "userFullName", :limit => 125
-    t.string  "userName",     :limit => 20
-    t.string  "userPassword", :limit => 32
-    t.string  "userEmail",    :limit => 125
-    t.integer "schoolId"
-  end
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

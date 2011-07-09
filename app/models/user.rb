@@ -2,16 +2,21 @@
 #
 # Table name: users
 #
-#  userId       :integer(4)      not null
-#  userFullName :string(125)
-#  userName     :string(20)
-#  userPassword :string(32)
-#  userEmail    :string(125)
-#  schoolId     :integer(4)
-#  userType     :string(0)       default("user"), not null
-#  userStatus   :string(0)       default("active"), not null
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class User < ActiveRecord::Base
-	attr_accessible :userFullName, :userName, :userEmail, :schoolId
+	attr_accessible :name, :email
+	
+	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	
+	validates :name, 	:presence => true,
+										:length 	=> { :maximum => 50 }
+	validates :email, :presence 	=> true,
+										:format			=> { :with => email_regex },
+										:uniqueness	=> { :case_sensitive => false }
 end
