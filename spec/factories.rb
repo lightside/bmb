@@ -2,6 +2,8 @@
 Factory.define :user do |user|
 	user.name										"Ryan Johanningmeier"
 	user.email									"ryanjohanningmeier@bmarketbooks.com"
+	user.image
 	user.password								"justcrap"
 	user.password_confirmation	"justcrap"
+	user.status									"active"
 end
