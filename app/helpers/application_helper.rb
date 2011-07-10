@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def logo
-		logo = image_tag("lg_logo.gif", :alt => "Black Market Books", :class => "main_logo")
+		image_tag("sm_logo.gif", :alt => "Black Market Books")
 	end
 
 	# Return a title on a per-page basis

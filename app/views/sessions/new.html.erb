@@ -1,0 +1,17 @@
+<section id="login_container" class="round push_3">
+	<%= form_for(:session, :url => sessions_path) do |f| %>
+		<div class="field">
+			<%= f.label :email %><br />
+			<%= f.text_field :email, :class => 'round' %>
+		</div>
+		<div class="field">
+			<%= f.label :password %><br />
+			<%= f.password_field :password, :class => 'round' %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Login" %>
+		</div>
+	<% end %>
+	
+	<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+</section>
