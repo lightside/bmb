@@ -264,6 +264,18 @@ textarea {
 		height: 2px;
 		background-color: black;
 	}
+	
+/* --- all users page --- */
+ul.users {
+	margin-top: 1em;
+}
+
+.users li {
+	list-style: none;
+	background-color: #ffc000;
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
 
 /* --- post page --- */
 #book_info, 
@@ -337,7 +349,8 @@ textarea {
 
 /* --- account page --- */
 #signup_container,
-#login_container {
+#login_container,
+#edit_user_container {
 	display: block;
 	float: left;
 	width: 340px;

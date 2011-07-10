@@ -3,10 +3,11 @@
 		<ul id="navigation" class="links round">
 			<li><%= link_to "Home", root_path %></li>
 			<% if signed_in? %>
-			<li><%= link_to "Dashboard", current_user %><li>
+			<li><%= link_to "Dashboard", current_user %></li>
+			<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+			<li><%= link_to "All Users", users_path %></li>
 			<% end %>
 			<li><%= link_to "Search", search_path %></li>
-			<li><%= link_to "Contact", contact_path %></li>
 			<li><%= link_to "Help", help_path %></li>
 			<% if signed_in? %>
 			<li class="navi_last"><%= link_to "Sign Out", logout_path, :method => :delete %></li>

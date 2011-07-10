@@ -1,5 +1,5 @@
-<section id="signup_container" class="push_3 round">
-	<%= image_tag("sign_up.gif", :alt => "Sign Up") %>
+<section id="edit_user_container" class="push_3 round">
+	<%= image_tag("edit_user.gif", :alt => "Edit User") %>
 	<%= form_for(@user) do |f| %>
 		<%= render 'shared/error_messages', :object => f.object %>
 		<div class="field">
@@ -23,10 +23,12 @@
 			<%= f.label :password_confirmation, "Password Confirmation" %><br />
 			<%= f.password_field :password_confirmation, :class => "round" %>
 		</div>
-		<p class="tos"><input type="checkbox" name="agree" value="agree" />I agree to the <a href="#">Terms of Service</a></p>
-		<p class="tos"><span>*</span>Required field</p>
 		<div class="actions">
-			<%= f.submit "Sign Up" %>
+			<%= f.submit "Update" %>
 		</div>
 	<% end %>
+	
+	<div>
+		<p>Need to add the ability to edit the users profile picture.</p>
+	</div>
 </section>
