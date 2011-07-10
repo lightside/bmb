@@ -25,6 +25,7 @@ input[type="password"] {
 	background-color: #fff0c1;
 	border: 2px solid black;
 	margin-bottom: 10px;
+	width: 100%
 }	
 input[type="submit"] {
 	float: right;
@@ -39,6 +40,10 @@ select {
 	background-color: #fff0c1;
 	border: 2px solid black;
 	margin-bottom: 10px;
+	width: 100%;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 textarea {
 	background-color: #fff0c1;
@@ -73,13 +78,50 @@ textarea {
 	padding-top: 110px;
 	padding-bottom: 60px;
 }
-span.error,
-div.flashError,
-div.flashConfirm {
-	font-size: .8em;
-	font-style: italic;
-	color: brown;
-}	
+
+/* --- errors --- */
+.field_with_errors {
+	margin-top: 10px;
+	padding: 2px;
+	background-color: red;
+	display: table;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+	.field_with_errors label {
+		color: #fff;	
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+#error_explanation {
+	width: 95%;
+	border: 2px solid red;
+	margin-top: 10px;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+	#error_explanation h2 {
+		text-align: left;
+		font-weight: bold;
+		padding: 5px 5px 5px 15px;
+		font-size: 12px;
+		margin: -7px;
+		background-color: #c00;
+		color: #fff;
+	}
+	#error_explanation p {
+		color: #333;
+		margin-bottom: 0;
+		padding: 5px;
+	}
+	#error_explanation ul li {
+		font-size: 12px;
+		list-style: square;
+	}
 
 /* --- header --- */
 #navigation { 
@@ -227,8 +269,6 @@ div.flashConfirm {
 #book_info, 
 #post {
 	background-color: #ffc000;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 }
 	#book_info {
 		height: 245px;
@@ -301,7 +341,6 @@ div.flashConfirm {
 	display: block;
 	float: left;
 	width: 340px;
-	height: 400px;
 	background-color: #ffc000;
 	padding: 15px;
 }
@@ -334,8 +373,6 @@ div.flashConfirm {
 }
 #info {
 	background-color: #ffc000;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 	padding: 10px;
 	height: 130px;
 	margin-bottom: 0;
@@ -359,8 +396,6 @@ td.sidebar {
 	}
 		#posts ul li{
 			background-color: #ffc000;
-			-moz-border-radius: 10px;
-			border-radius: 10px;
 			padding: 10px;
 			margin-bottom: 5px;
 		}
@@ -378,8 +413,6 @@ td.sidebar {
 #book_info_edit, 
 #post_edit {
 	background-color: #ffc000;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 }
 	#book_info_edit {
 		height: 205px;
@@ -474,8 +507,6 @@ td.sidebar {
 	margin-bottom: 20px;
 	padding-left: 15px;
 	padding-right: 15px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 }
 	#item_info #item_title {
 		font-size: 30px;
@@ -514,8 +545,6 @@ td.sidebar {
 	background-color: #ffc000;
 	padding: 5px 0 1px 15px;
 	width: 725px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 }
 	.result img {
 		position: relative;
@@ -553,8 +582,6 @@ td.sidebar {
 #contact {
 	width: 770px;
 	background-color: #ffc000;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 	padding: 15px;
 }
 	#contact_form label {
