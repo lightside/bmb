@@ -44,6 +44,11 @@ textarea {
 	background-color: #fff0c1;
 	border: 2px solid black;
 }
+.round {	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
 .links a { 
 	font-family: 'Times New Roman', Times, serif; 
 	color: white;
@@ -298,8 +303,6 @@ div.flashConfirm {
 	width: 340px;
 	height: 400px;
 	background-color: #ffc000;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 	padding: 15px;
 }
 	#signup_container {
@@ -335,24 +338,18 @@ div.flashConfirm {
 	border-radius: 10px;
 	padding: 10px;
 	height: 130px;
+	margin-bottom: 0;
 }
-	#info a,
-	#posts a {
-		text-decoration: none;
-		cursor: hand;
-	}
-	#info p {
-		display: block;
-		margin: 0;
-		margin-left: 20px;
-		padding-bottom: 6px;
-	}
-	#info p span.user_info {
-		display: block;
-		padding-left: 120px;
-		margin: 0;
-		margin-top: -21px;
-	}
+td.main {
+	width: 70%;
+	padding: 1em;
+}
+td.sidebar {
+	width: 30%;
+	padding: 1em;
+	vertical-align: top;
+	background: white;
+}
 #posts {
 	margin-top: 20px;
 }

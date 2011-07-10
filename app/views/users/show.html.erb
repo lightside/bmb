@@ -1,1 +1,15 @@
-<%= @user.name %>, <%= @user.email %>
+<table id="info" summary="Profile infomation">
+	<tr>
+		<td class="main round">
+			<h1>
+				<!-- Add user image -->
+				<%= @user.name %>
+			</h1>
+		</td>
+		<td class="sidebar round">
+			<%= link_to "Create Post", "#" %><br />
+			<%= link_to "Edit Profile", "#" %><br />
+			<%= link_to "Delete Profile", "#" %>
+		</td>
+	</tr>
+</table>
