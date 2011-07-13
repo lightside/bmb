@@ -1,9 +1,9 @@
 <tr>
 	<td class="listing">
-		<span class="title"><%= listing.title %></span>
-		<span class="content"><%= listing.content %></span>
-		<span class="condition"><%= listing.condition %></span>
-		<span class="price"><%= listing.price %></span>
+		<h3 class="title"><%= listing.title %></h3>
+		<span class="content"><%= wrap(listing.content) %></span><br />
+		<span class="condition">Condition: <%= listing.condition %></span><br />
+		<span class="price">Price: <%= listing.price %></span><br />
 		<span class="timestamp">Posted <%= time_ago_in_words(listing.created_at) %> ago.</span>
 	</td>
 	<% user = listing.user rescue User.find(listing.user_id) %>

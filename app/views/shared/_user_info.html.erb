@@ -1,11 +1,7 @@
 <div class="user_info">
 	<a href="<%= user_path(current_user) %>">
 		<!-- add user image -->
-		<span class="user_name">
-			<%= current_user.name %>
-		</span>
-		<span class="listings">
-			<%= pluralize(current_user.listings.count, "listing") %>
-		</span>
+		<span class="user_name"><%= current_user.name %></span><br />
+		<span class="listings"><%= pluralize(current_user.listings.count, "listing") %></span>
 	</a>
 </div>	
