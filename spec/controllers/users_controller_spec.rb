@@ -79,6 +79,14 @@ describe UsersController do
 			get :show, :id => @user
 			response.should have_selector("h1", :content => @user.name)
 		end
+		
+		it "should show the user's listings" do
+			mp1 = Factory(:listing, :user => @user, :title => "Post 1", :content => "Test post 1.")
+			mp2 = Factory(:listing, :user => @user, :title => "Post 2", :content => "Test post 2.")
+			get :show, :id => @user
+			response.should have_selector("span.content", :content => mp1.content)
+			response.should have_selector("span.content", :content => mp2.content)
+		end
 	end
 
   describe "GET 'new'" do
@@ -306,13 +314,19 @@ describe UsersController do
   			delete :destroy, :id => @user
   			response.should redirect_to(root_path)
   		end
+  		
+  		it "should not have delete links" do
+  			test_sign_in(@user)
+  			delete :destroy, :id => @user
+  			response.should_not have_selector("a", :content => "delete")
+  		end
   	end
   	
   	describe "as an admin user" do
   	
   		before(:each) do
-  			admin = Factory(:user, :email => "admin@bmarketbooks.com", :admin => true)
-  			test_sign_in(admin)
+  			@admin = Factory(:user, :email => "admin@bmarketbooks.com", :admin => true)
+  			test_sign_in(@admin)
   		end
   		
   		it "should destroy the user" do
@@ -323,7 +337,14 @@ describe UsersController do
   		
   		it "should redirect to the users page" do
   			delete :destroy, :id => @user
+  			flash[:success].should =~ /destroyed/i
   			response.should redirect_to(users_path)
+  		end
+  		
+  		it "should not be able destroy itself" do
+  			lambda do
+  				delete :destroy, :id => @admin
+  			end.should_not change(User, :count)
   		end
   	end
   end

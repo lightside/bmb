@@ -3,14 +3,21 @@
 		<td class="main round">
 			<p>Add the code so a user can have their image displayed.</p>
 			<h1>
-				<!-- Add user image -->
 				<%= @user.name %>
+				<!-- Add user image -->
 			</h1>
 		</td>
 		<td class="sidebar round">
+			<strong>Listings</strong> <%= @user.listings.count %><br />
 			<%= link_to "Create Post", "#" %><br />
 			<%= link_to "Edit Profile", "#" %><br />
 			<%= link_to "Delete Profile", "#" %>
 		</td>
 	</tr>
+	<% unless @user.listings.empty? %>
+		<table class="listings" summary="User listings">
+			<%= render @listings %>
+		</table>
+		<%= will_paginate @listings %>
+	<% end %>
 </table>

@@ -1,28 +1,7 @@
 <section id="signup_container" class="push_3 round">
 	<%= image_tag("sign_up.gif", :alt => "Sign Up") %>
 	<%= form_for(@user) do |f| %>
-		<%= render 'shared/error_messages', :object => f.object %>
-		<div class="field">
-			<%= f.label :name %><br />
-			<%= f.text_field :name, :class => "round" %>
-		</div>
-		<div class="field">
-			<%= f.label :school %><br />
-			<%= f.select 	:school,
-										options_for_select([["", "0"],["Texas Tech University", "1"], ["University of Texas", "2"], ["Texas A&M University", "3"], ["University of Houston", "4"], ["Texas State University", "5"]]) %>
-		</div>
-		<div class="field">
-			<%= f.label :email %><br />
-			<%= f.text_field :email, :class => "round" %>
-		</div>
-		<div class="field">
-			<%= f.label :password %><br />
-			<%= f.password_field :password, :class => "round" %>
-		</div>
-		<div class="field">
-			<%= f.label :password_confirmation, "Password Confirmation" %><br />
-			<%= f.password_field :password_confirmation, :class => "round" %>
-		</div>
+		<%= render 'fields', :f => f %>
 		<p class="tos"><input type="checkbox" name="agree" value="agree" />I agree to the <a href="#">Terms of Service</a></p>
 		<p class="tos"><span>*</span>Required field</p>
 		<div class="actions">

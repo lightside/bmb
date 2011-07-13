@@ -10,5 +10,10 @@ namespace :db do
 			password = "password"
 			User.create!(:name => name, :email => email, :password => password, :password_confirmation => password)
 		end
+		User.all(:limit => 6).each do |user|
+			50.times do
+				user.listings.create!(:title => Faker::Lorem.sentence(4), :content => Faker::Lorem.sentence(5), :condition => "Good", :price => "$00.00", :active => "active", :book_id => "1")
+			end
+		end
 	end
 end

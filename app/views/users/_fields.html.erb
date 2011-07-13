@@ -1,0 +1,22 @@
+<%= render 'shared/error_messages', :object => f.object %>
+<div class="field">
+	<%= f.label :name %><br />
+	<%= f.text_field :name, :class => "round" %>
+</div>
+<div class="field">
+	<%= f.label :school %><br />
+	<%= f.select 	:school,
+								options_for_select([["", "0"],["Texas Tech University", "1"], ["University of Texas", "2"], ["Texas A&M University", "3"], ["University of Houston", "4"], ["Texas State University", "5"]]) %>
+</div>
+<div class="field">
+	<%= f.label :email %><br />
+	<%= f.text_field :email, :class => "round" %>
+</div>
+<div class="field">
+	<%= f.label :password %><br />
+	<%= f.password_field :password, :class => "round" %>
+</div>
+<div class="field">
+	<%= f.label :password_confirmation, "Password Confirmation" %><br />
+	<%= f.password_field :password_confirmation, :class => "round" %>
+</div>

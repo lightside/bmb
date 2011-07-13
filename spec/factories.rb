@@ -11,3 +11,12 @@ end
 Factory.sequence :email do |n|
 	"person-#{n}@bmarketbooks.com"
 end
+
+Factory.define :listing do |listing|
+	listing.title "Some title"
+	listing.content "Some content"
+	listing.condition "Good"
+	listing.price "$10.30"
+	listing.active "true"
+	listing.association :user
+end

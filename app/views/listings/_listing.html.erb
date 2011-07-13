@@ -1,0 +1,15 @@
+<tr>
+	<td class="listing">
+		<span class="title"><%= listing.title %></span>
+		<span class="content"><%= listing.content %></span>
+		<span class="condition"><%= listing.condition %></span>
+		<span class="price"><%= listing.price %></span>
+		<span class="timestamp">Posted <%= time_ago_in_words(listing.created_at) %> ago.</span>
+	</td>
+	<% user = listing.user rescue User.find(listing.user_id) %>
+	<% if current_user?(user) %>
+	<td>
+		<%= link_to "delete", listing, :method => :delete, :confirm => "You sure?", :title => listing.title %>
+	</td>
+	<% end %>
+</tr>

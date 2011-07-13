@@ -1,75 +1,89 @@
-<section id="site_intro">
-	<p><span class="leader">Welcome to Black Market Books:</span> a place for students to buy, sell, or trade their textbooks to other students.</p>
+<% if signed_in? %>
+	<table class="front" summary="For signed-in users">
+		<tr>
+			<td class="main">
+				<!-- Add school name in h1 here -->
+				<%= render 'shared/feed' %>
+			</td>
+			<td class="sidebar round">
+				<%= render 'shared/user_info' %>
+			</td>
+		</tr>
+	</table>
+<% else %>
+	<section id="site_intro">
+		<p><span class="leader">Welcome to Black Market Books:</span> a place for students to buy, sell, or trade their textbooks to other students.</p>
 			
-	<h3 class="leader">How to Use:</h3>
+		<h3 class="leader">How to Use:</h3>
 			
-	<p><span class="leader">To search for a book</span> use one of our options featured by either school and class, book title, or ISBN number.</p>
-	<p><span class="leader">To sell a book</span> please create an account, or login. From there you will be able to create, edit, and delete posts on the site.</p>
-</section>
-<section id="account" class="grid_6">
-	<ul class="account_tabs">
-		<li><a href="#sign_up_tab">Sign Up</a></li>
-		<li><a href="#login_tab">Login</a></li>
-	</ul>
-	<div class="account_tab_container">
-		<form id="sign_up_tab" class="account_tab_content_shadow" action="" method="post">
-			School:<span>*</span><br />
-			<select name="schoolId">
-				<option value="0"></option>
-				<option value="1">Texas Tech University</option>
-				<option value="2">University of Texas</option>
-				<option value="3">Texas A&M University</option>
-				<option value="4">University of Houston</option>
-				<option value="5">Texas State University</option>
-			</select>
-			<br />
-			Email:<span>*</span><br />
-			<input type="text" name="email" value="" /><br />
-			Password:<span>*</span><br />
-			<input type="password" name="password" value="" /><br />
-			Password Confirmation:<span>*</span><br />
-			<input type="password" name="" /><br />
-			<p class="tos"><input type="checkbox" name="agree" value="agree" />I agree to the <a href="#">Terms of Service</a></p>
-			<input type="submit" value="Sign Up" />
-			<p class="tos"><span>*</span>Required field</p>
-		</form>
-	</div>
-</section>
-<section id="search" class="grid_7">
-	<ul class="search_tabs">
-		<li><a href="#school_tab">School</a></li>
-		<li><a href="#book_tab">Book</a></li>
-		<li><a href="#isbn_tab">ISBN</a></li>
-	</ul>
-	<div class="search_tab_container">
-		<form id="school_tab" class="search_tab_content_shadow" action="" method="post">
-			School:<br />
-			<select name="school">
-				<option value="0"></option>
-				<option value="1">Texas Tech University</option>
-				<option value="2">University of Texas</option>
-				<option value="3">Texas A&M University</option>
-				<option value="4">University of Houston</option>
-				<option value="5">Texas State University</option>
-			</select>
-			<br />
-			Course (3 or 4 letter version):<br />
-			<input type="text" name="course" value="" /><br />
-			<p>Additional search options</p>
-			<hr />
-			Book Title:<br />
-			<input type="text" name="book" value="" /><br />
-			<input type="submit" value="Search" />
-		</form>
-		<form id="book_tab" class="search_tab_content_shadow" action="" method="post">
-			Book Title:<br />
-			<input type="text" name="title" value="" /><br />
-			<input type="submit" value="Search" />
-		</form>
-		<form id="isbn_tab" class="search_tab_content_shadow" action="" method="post">
-			ISBN:<br />
-			<input type="text" name="isbn" value="" /><br />
-			<input type="submit" value="Search" />
-		</form>
-	</div>
+		<p><span class="leader">To search for a book</span> use one of our options featured by either school and class, book title, or ISBN number.</p>
+		<p><span class="leader">To sell a book</span> please create an account, or login. From there you will be able to create, edit, and delete posts on the site.</p>
+	</section>
+	<section id="account" class="grid_6">
+		<ul class="account_tabs">
+			<li><a href="#sign_up_tab">Sign Up</a></li>
+			<li><a href="#login_tab">Login</a></li>
+		</ul>
+		<div class="account_tab_container">
+			<form id="sign_up_tab" class="account_tab_content_shadow" action="" method="post">
+				School:<span>*</span><br />
+				<select name="schoolId">
+					<option value="0"></option>
+					<option value="1">Texas Tech University</option>
+					<option value="2">University of Texas</option>
+					<option value="3">Texas A&M University</option>
+					<option value="4">University of Houston</option>
+					<option value="5">Texas State University</option>
+				</select>
+				<br />
+				Email:<span>*</span><br />
+				<input type="text" name="email" value="" /><br />
+				Password:<span>*</span><br />
+				<input type="password" name="password" value="" /><br />
+				Password Confirmation:<span>*</span><br />
+				<input type="password" name="" /><br />
+				<p class="tos"><input type="checkbox" name="agree" value="agree" />I agree to the <a href="#">Terms of Service</a></p>
+				<input type="submit" value="Sign Up" />
+				<p class="tos"><span>*</span>Required field</p>
+			</form>
+		</div>
+	</section>
+	<section id="search" class="grid_7">
+		<ul class="search_tabs">
+			<li><a href="#school_tab">School</a></li>
+			<li><a href="#book_tab">Book</a></li>
+			<li><a href="#isbn_tab">ISBN</a></li>
+		</ul>
+		<div class="search_tab_container">
+			<form id="school_tab" class="search_tab_content_shadow" action="" method="post">
+				School:<br />
+				<select name="school">
+					<option value="0"></option>
+					<option value="1">Texas Tech University</option>
+					<option value="2">University of Texas</option>
+					<option value="3">Texas A&M University</option>
+					<option value="4">University of Houston</option>
+					<option value="5">Texas State University</option>
+				</select>
+				<br />
+				Course (3 or 4 letter version):<br />
+				<input type="text" name="course" value="" /><br />
+				<p>Additional search options</p>
+				<hr />
+				Book Title:<br />
+				<input type="text" name="book" value="" /><br />
+				<input type="submit" value="Search" />
+			</form>
+			<form id="book_tab" class="search_tab_content_shadow" action="" method="post">
+				Book Title:<br />
+				<input type="text" name="title" value="" /><br />
+				<input type="submit" value="Search" />
+			</form>
+			<form id="isbn_tab" class="search_tab_content_shadow" action="" method="post">
+				ISBN:<br />
+				<input type="text" name="isbn" value="" /><br />
+				<input type="submit" value="Search" />
+			</form>
+		</div>
+	<% end %>
 </section>

@@ -1,0 +1,21 @@
+<%= form_for @listing do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div class="field">
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.text_area :content %>
+	</div>
+	<div class="field">
+		<!-- Add drop down box for 'condition' here -->
+	</div>
+	<div class="field">
+		<%= f.text_field :price %>
+	</div>
+	<div class="field hidden">
+		<%= f.text_field :active %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Submit" %>
+	</div>
+<% end %>

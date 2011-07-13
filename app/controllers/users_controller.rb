@@ -10,23 +10,32 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
+		@listings = @user.listings.paginate(:page => params[:page])
 		@title = @user.name
 	end
 
   def new
-  	@user = User.new
-  	@title = "Sign Up"
+	  @user = User.new
+  	if current_user?(@user)
+  		redirect_to root_path
+  	else
+  		@title = "Sign Up"
+  	end
   end
   
   def create
-  	@user = User.new(params[:user])
-  	if @user.save
-  		sign_in @user
-  		flash[:success] = "Welcome to Black Market Books!"
-  		redirect_to @user
+	  @user = User.new(params[:user])
+  	if current_user?(@user)
+  		redirect_to root_path
   	else
-  		@title = "Sign Up"
-  		render 'new'
+  		if @user.save
+  			sign_in @user
+  			flash[:success] = "Welcome to Black Market Books!"
+  			redirect_to @user
+  		else
+  			@title = "Sign Up"
+  			render 'new'
+  		end
   	end
   end
   
@@ -52,10 +61,6 @@ class UsersController < ApplicationController
   end
   
   private
-  
-  	def authenticate
-  		deny_access unless signed_in?
-  	end
   	
   	def correct_user
   		@user = User.find(params[:id])
